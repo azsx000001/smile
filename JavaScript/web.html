@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;font-size:20px;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<h2>與我聯絡</h2>
+
+<div class="container">
+  <form action="#" method="post" name="smile"> 
+
+<label for="name"class="mb-3 block text-base font-medium text-default">
+公司名稱
+</label>
+<input type="text" name="公司名稱" id="name"
+placeholder="輸入貴公司的名稱"
+class="w-full rounded-md border border-neutral-200 bg-white py-3 px-6 text-base font-medium text-neutral-700 outline-none focus:border-skybg-sky-500 focus:shadow-md"/>
+<div class="container">
+</div>
+
+<label for="name"class="mb-3 block text-base font-medium text-default">
+姓名
+</label>
+<input type="text" name="姓名" id="name"
+placeholder="輸入您的名稱"
+class="w-full rounded-md border border-neutral-200 bg-white py-3 px-6 text-base font-medium text-neutral-700 outline-none focus:border-skybg-sky-500 focus:shadow-md"/>
+<div class="container">
+
+<label for="email"class="mb-3 block text-base font-medium text-default">
+</div>
+電子郵件
+</label>
+<input type="email" name="電子郵件" id="email"
+placeholder="請輸入您的電子郵件"
+class="w-full rounded-md border border-neutral-200 bg-white py-3 px-6 text-base font-medium text-neutral-700 outline-none focus:border-skybg-sky-500 focus:shadow-md"/>
+<div class="container">
+</div>
+
+<label for="mobile" class="mb-3 block text-base font-medium text-default">
+電話號碼
+</label>
+<input
+type="text"
+name="電話號碼"
+id="mobile"
+placeholder="輸入您的電話號碼"
+class="w-full rounded-md border border-neutral-200 bg-white py-3 px-6 text-base font-medium text-neutral-700 outline-none focus:border-skybg-sky-500 focus:shadow-md"
+/>
+</div>
+<div class="container">
+<label
+for="message"
+class="mb-3 block text-base font-medium text-default"
+>
+留言
+</label>
+<textarea
+rows="6"
+name="留言"
+id="message"
+placeholder="輸入您的留言"
+class="w-full resize-none rounded-md border border-neutral-200 bg-white py-3 px-6 text-base font-medium text-neutral-700 outline-none focus:border-skybg-sky-500 focus:shadow-md"
+></textarea>
+</div>
+<div>
+<input type="submit" value="送出" name="Submit">
+</div>
+
+
+    <script type="text/javascript">
+       const scriptURL='https://script.google.com/macros/s/AKfycbzspJQXfDcCyf5p5g4Rp7BnyjMnwomnB-ZuEkA9erAHyKwa6qd6-awNGsApOjmZLp-hUg/exec'
+
+       const form = document.forms['smile']
+          
+          form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .then(response => alert("上傳成功!!!"))
+              .catch(error => console.error('傳送錯誤!', error.message))
+          })
+
+     </script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;font-size:20px;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=email], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<h2>與我聯絡</h2>
+
+<div class="container">
+  <form action="#" method="post" name="smile"> 
+    <label for="company">公司名稱</label>
+    <input type="text" id="company" name="公司名稱" placeholder="輸入貴公司的名稱" required>    
+    
+    <label for="name">姓名</label>
+    <input type="text" id="name" name="姓名" placeholder="輸入您的名稱" required>
+
+    <label for="email">電子郵件</label>
+    <input type="email" id="email" name="電子郵件" placeholder="輸入您的電子郵件" required>
+
+    <label for="mobile">電話號碼</label>
+    <input type="text" id="mobile" name="電話號碼" placeholder="輸入您的電話號碼" required>
+
+    <label for="question">相關問題</label>
+    <select id="question" name="相關問題">
+      <option value="請選擇您的提問">請選擇您的提問</option>
+      <option value="客製化色母粒">客製化色母</option>
+      <option value="色粉">色粉</option>
+      <option value="黑色母">黑色母</option>
+      <option value="白色母">白色母</option>
+      <option value="功能母粒">功能母粒</option>
+      <option value="其它">其它</option>
+    </select>
+
+    <label for="subject">留言內容</label>
+    <textarea rows="6" id="subject" name="留言內容" placeholder="輸入您的留言.." style="w-full resize-none rounded-md border border-neutral-200 bg-white py-3 px-6 text-base font-medium text-neutral-700 outline-none focus:border-skybg-sky-500 focus:shadow-md"></textarea>
+
+    <input type="submit" value="送出" name="Submit">
+  </form>
+</div>
+
+
+    <script type="text/javascript">
+       const scriptURL='https://script.google.com/macros/s/AKfycbzspJQXfDcCyf5p5g4Rp7BnyjMnwomnB-ZuEkA9erAHyKwa6qd6-awNGsApOjmZLp-hUg/exec'
+
+       const form = document.forms['smile']
+          
+          form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .then(response => alert("發送成功!感謝您寶貴的留言,我們會盡快與您聯絡,謝謝"))
+              .catch(error => console.error('發生錯誤!', error.message))
+          })
+
+     </script>
+
+</body>
+</html>
